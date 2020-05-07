@@ -11,8 +11,8 @@ void create_string(String* str, int size)
         str->data = malloc(size);
         str->count = 0;
     }
-    else
-        printf("Size of string is less than 1");
+    /*else
+        printf("Size of string is less than 1");*/
 }
 
 void generate_string(String* str, int size)
@@ -46,8 +46,8 @@ void reallocate_string(String* str, int reallocate)
         str->data = tmp;
         str->allocated = reallocate;
     }
-    else
-        printf("String reallocated to 0 bytes or less");
+    /*else
+        printf("String reallocated to 0 bytes or less");*/
 }
 
 bool extend_check(String* str)
@@ -88,7 +88,7 @@ void fill_element(String* str, char* element)
 
 char* get_element(String *str, int position)
 {
-    return (char*)str->data + position;
+	return (char*)str->data + position;
 }
 
 void change_element(String *str, int position, char* element)
@@ -99,16 +99,16 @@ void change_element(String *str, int position, char* element)
 
 void free_string(String *str)
 {
-    free(str->data);
-    str->allocated = 0;
-    str->count = 0;
-    str->capacity = 0;
-    free(str);
+	free(str->data);
+	str->allocated = 0;
+	str->count = 0;
+	str->capacity = 0;
+	free(str);
 }
 
 int get_size(String* str)
 {
-    return str->count;
+	return str->count;
 }
 
 void print_string(String* str)
